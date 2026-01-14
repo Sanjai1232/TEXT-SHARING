@@ -246,3 +246,46 @@
                 padding: 32px;
             }
         }
+                /* Add these styles to your ./css/home.css file */
+        
+        /* Tab Navigation Styles */
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #888;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            color: #ffffff; /* or your primary brand color */
+            border-bottom: 2px solid #000;
+        }
+
+        /* Toggle Content Visibility */
+        .input-group {
+            display: none; /* Hidden by default */
+        }
+        
+        .input-group.active {
+            display: block; /* Show when active */
+        }
+
+        /* File Input Styling */
+        .file-drop-area {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #515152;
+        }

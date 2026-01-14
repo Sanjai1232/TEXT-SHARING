@@ -7,35 +7,52 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
         <h1>Quick<span>Text</span></h1>
         <p>Fast • Secure • Minimal</p>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="hero-text">
-            <h2>Share Text Instantly</h2>
-            <p>Use a simple code to share and receive text with anyone, anywhere.</p>
+            <h2>Share Instantly</h2>
+            <p>Share text, images, or PDFs securely via a simple code.</p>
         </div>
 
         <div class="boxes">
-            <!-- Share Box -->
             <div class="box">
-                <h3>Share Text</h3>
-                <textarea placeholder="Enter your text"></textarea>
-                <button class="btn-primary">Generate Code</button>
-                <span class="result">Code will appear here</span>
+                <h3>Share Data</h3>
+
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('text')">Text</button>
+                    <button class="tab-btn" onclick="switchTab('file')">File (Image/PDF)</button>
+                </div>
+
+                <div id="text-mode" class="input-group active">
+                    <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+                </div>
+
+                <div id="file-mode" class="input-group">
+                    <div class="file-drop-area">
+                        <p>Select an Image or PDF</p>
+                        <input type="file" id="fileInput" accept="image/*, application/pdf">
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="generateCode()">Generate Code</button>
+                <span class="result" id="shareResult">Code will appear here</span>
             </div>
-            <!-- Receive Box -->
+
             <div class="box">
-                <h3>Receive Text</h3>
+                <h3>Receive Data</h3>
                 <input type="text" placeholder="Enter 4-digit code">
-                <button class="btn-outline">Get Text</button>
-                <div class="result">Shared text will appear here</div>
+                <button class="btn-outline">Get Data</button>
+                <div class="result">Shared content will appear here</div>
             </div>
         </div>
     </div>
+
+    <script src="../FRONT-END/Script/homeScript.js">
+      
+    </script>
 </body>
 </html>
