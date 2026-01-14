@@ -6,7 +6,7 @@ env.config({path: './.env'});
 app.use(express.json());
 const Database= require('./database/connect');
 Database();
-const Routes=require("../Text_Sharing/Routes/routes")
+const Routes=require("./Routes/routes")
 app.use(express.json())
 app.use(Routes)
 app.listen(3000, () => {
