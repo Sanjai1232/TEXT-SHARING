@@ -18,20 +18,26 @@
                 document.getElementById('textInput').value = "";
             }
         }
+const textInput=document.getElementById('textInput');
 
-        function generateCode() {
-            // This is just a simulation of how you might handle the data
-            const resultDisplay = document.getElementById('shareResult');
-            
-            if (currentMode === 'text') {
-                const textVal = document.getElementById('textInput').value;
-                if(!textVal) { alert("Please enter text"); return; }
-                console.log("Uploading Text:", textVal);
-            } else {
-                const fileVal = document.getElementById('fileInput').files[0];
-                if(!fileVal) { alert("Please select a file"); return; }
-                console.log("Uploading File:", fileVal.name);
-            }
-
-            resultDisplay.innerText = "1234 (Simulated Code)";
-        }
+const shareResult=document.getElementById('shareResult');
+const btn=document.getElementById('btn');
+btn.onclick=async()=>{
+    const text=textInput.value;
+    const obj={ text:text};
+    console.log(obj);
+    
+    try{
+        const response=await fetch('http://localhost:3000/update',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+        },
+                body:JSON.stringify(obj),});
+        const data=await response.json();
+        console.log(data.msg);
+        console.log(text);
+        shareResult.innerText=`Your Generated Code is: ${data.code}`;
+        
+    }catch(error){
+        console.error('Error:',error)}}
