@@ -272,13 +272,7 @@
         }
 
         /* Toggle Content Visibility */
-        .input-group {
-            display: none; /* Hidden by default */
-        }
-        
-        .input-group.active {
-            display: block; /* Show when active */
-        }
+
 
         /* File Input Styling */
         .file-drop-area {
