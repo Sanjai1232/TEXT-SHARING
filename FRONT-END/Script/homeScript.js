@@ -53,5 +53,6 @@ btn.onclick=async()=>{
       const data=await fetch(`http://localhost:3000/getdata?code=${codeValue}`)
       const res=await data.json();
       console.log(res.msg);
-      
+        result.innerText=`Shared Content: ${res.content.text}`;  
+
       }
