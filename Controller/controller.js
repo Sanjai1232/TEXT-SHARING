@@ -26,3 +26,27 @@ exports.update = async (req, res, next) => {
         res.status(500).send({ msg: "Server Error" });
     }
 };
+ exports.retrive=async (req,res,next)=>{
+
+
+       const code = req.query.code;
+
+    console.log("User searched for:", code);
+           const ava=await mongodp.findOne({code:code})
+       try{
+       if(ava){
+        return  res.json({
+        msg:"avaliable",
+        content:ava
+       }) 
+       }
+        return res.json({
+            msg:"no code found",
+            code:ava
+        })
+
+       }catch(err){console.log("error in retrive")}
+        
+
+
+}

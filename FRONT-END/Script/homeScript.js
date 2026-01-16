@@ -41,3 +41,17 @@ btn.onclick=async()=>{
         
     }catch(error){
         console.error('Error:',error)}}
+
+
+
+   const gbtn=document.getElementById('getbtn')
+      const result=document.getElementById('result') 
+      const gcode=document.getElementById('gcode') 
+     
+      gbtn.onclick=async()=>{
+               let codeValue=gcode.value;
+      const data=await fetch(`http://localhost:3000/getdata?code=${codeValue}`)
+      const res=await data.json();
+      console.log(res.msg);
+      
+      }
