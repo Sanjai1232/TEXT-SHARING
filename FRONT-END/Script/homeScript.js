@@ -25,6 +25,8 @@ const textInput=document.getElementById('textInput');
 
 const shareResult=document.getElementById('shareResult');
 
+
+
 btn.onclick=async()=>{
     const text=textInput.value;
     const obj={ text:text};
@@ -38,10 +40,8 @@ btn.onclick=async()=>{
         },
                 body:JSON.stringify(obj),});
         const data=await response.json();
-        console.log(data.msg);
-        console.log(text);
-        shareResult.innerText=`Your Generated Code is: ${data.code}`;
-        
+       window.location.href=`result.html?code=${data.code}`;
+    console.log(data.code);
     }catch(error){
         console.error('Error:',error)}}
 
@@ -50,16 +50,17 @@ btn.onclick=async()=>{
    const gbtn=document.getElementById('getbtn')
       const result=document.getElementById('result') 
       const gcode=document.getElementById('gcode') 
-     
       gbtn.onclick=async()=>{
                let codeValue=gcode.value;
       const data=await fetch(`http://localhost:3000/getdata?code=${codeValue}`)
       const res=await data.json();
       console.log(res.msg);
         result.innerText=`Shared Content: ${res.content.text}`;  
-
       }
-fbtn.onclick=async()=>{
+
+
+fbtn.onclick=async(e)=>{
+    e.preventDefault();
     const fileInput=document.getElementById('fileInput');
     const file=fileInput.files[0];
     const formData = new FormData();
@@ -69,5 +70,6 @@ fbtn.onclick=async()=>{
             body: formData,});
         const data=await res.json();
         console.log(data.msg);
-        shareResult.innerText=`Your Generated Code is: ${data.code}`;
+        console.log(data.code);
+        window.location.href=`result.html?code=${data.code}`;
 }

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - QuickText</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121218;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            border-radius: 16px;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16162a 100%);
+            padding: 50px 40px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        /* .success-badge {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .success-badge::after {
+            content: "✓";
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        } */
+
+        h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 15px;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .code-section {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin-bottom: 30px;
+        }
+
+        .code-label {
+            color: #9ca3af;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: #6366f1;
+            font-size: 40px;
+            margin-bottom: 0;
+            font-weight: 700;
+            letter-spacing: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .message {
+            color: #d1d5db;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: #6366f1;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-badge"></div>
+        
+        <h1>Success!</h1>
+        <p class="subtitle">Your content has been shared</p>
+
+        <div class="code-section">
+            <div class="code-label">Your Share Code</div>
+            <h2 id="h2">----</h2>
+        </div>
+
+        <p class="message" id="message">Share this code with others to let them access your content securely and instantly.</p>
+
+        <div class="actions">
+            <a href="home.html" class="btn btn-primary">Share Another</a>
+            <a href="home.html" class="btn btn-secondary">Back Home</a>
+        </div>
+    </div>
+
+    <script src="../FRONT-END/Script/result.js"></script>
+</body>
+</html>

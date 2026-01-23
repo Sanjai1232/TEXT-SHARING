@@ -26,6 +26,9 @@ exports.update = async (req, res, next) => {
         res.status(500).send({ msg: "Server Error" });
     }
 };
+
+
+
  exports.retrive=async (req,res,next)=>{
 
 
