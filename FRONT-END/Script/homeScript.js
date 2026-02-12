@@ -5,13 +5,13 @@ const fbtn=document.getElementById('fbtn');
             currentMode = mode;
             const buttons = document.querySelectorAll('.tab-btn');
 
-    // 2. Remove the 'active' class from every single button
+
     buttons.forEach(btn => {
         btn.classList.remove('active');
     });
 
-    // 3. Add the 'active' class to the specific button that was clicked
-    // event.target refers to the button that triggered the onclick
+
+
     event.target.classList.add('active')
            if(currentMode==="text"){
             document.getElementById('text-area').style.display = 'block';
@@ -31,7 +31,6 @@ btn.onclick=async()=>{
     const text=textInput.value;
     const obj={ text:text};
     console.log(obj);
-    
     try{
         const response=await fetch('http://localhost:3000/update',{
             method:'POST',
@@ -54,8 +53,8 @@ btn.onclick=async()=>{
                let codeValue=gcode.value;
       const data=await fetch(`http://localhost:3000/getdata?code=${codeValue}`)
       const res=await data.json();
-      console.log(res.msg);
-        result.innerText=`Shared Content: ${res.content.text}`;  
+      const dataa=res.content.text
+      window.location.href=`ss.html?code=${dataa}`
       }
 
 

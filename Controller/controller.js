@@ -6,6 +6,7 @@ exports.update = async (req, res, next) => {
          while(!uniq){{
      const code=Math.floor(Math.random() * 10000).toString().padStart(4, '0'); 
             const existing = await mongodp.findOne({ code: code });
+
             if(!existing){
                 await mongodp.create({
                     text: req.body.text,
@@ -18,6 +19,7 @@ exports.update = async (req, res, next) => {
                 uniq=true;
                 break;
             }
+            
             uniq=false;      
          }
       }
