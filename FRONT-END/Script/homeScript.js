@@ -1,4 +1,4 @@
-  let currentMode = 'text'; // Default mode
+  let currentMode = 'text';
 const btn=document.getElementById('btn');
 const fbtn=document.getElementById('fbtn');
         function switchTab(mode) {
@@ -53,8 +53,10 @@ btn.onclick=async()=>{
                let codeValue=gcode.value;
       const data=await fetch(`http://localhost:3000/getdata?code=${codeValue}`)
       const res=await data.json();
+        console.log(res);
+        // alert("wait")
       const dataa=res.content.text
-      window.location.href=`ss.html?code=${dataa}`
+      window.location.href=`ss.html?code=${codeValue}`
       }
 
 

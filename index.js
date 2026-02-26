@@ -7,6 +7,7 @@ const env = require('dotenv');
 const cors = require('cors');
 app.use(cors());
 env.config({path: './.env'});
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 const Database= require('./database/connect');
 Database();
@@ -19,8 +20,7 @@ Database().then(()=>{  cron.schedule("*/5 * * * *", () => {
     })}
 )
 app.listen(3000, () => {
-       console.log(process.env.DP);
-    //    console.log(process.env.USER);
-       
+    //    console.log(process.env.DP);
+    //    console.log(process.env.USER); 
     console.log("Server is running on port 3000");
 });

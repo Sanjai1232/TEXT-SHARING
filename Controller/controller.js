@@ -1,4 +1,5 @@
 const mongodp = require("../Models/model");
+const path = require("path");
 
 exports.update = async (req, res, next) => {
     try {
@@ -81,3 +82,10 @@ exports.fupload=async(req,res,next)=>{
     }
 };
 
+
+exports.fretrive=async(req,res,next)=>{
+    const fileName = req.params.filename;
+   const filePath = path.join(__dirname, "..", "uploads", fileName);
+
+    res.download(filePath); // This forces download
+};
